@@ -33,4 +33,6 @@ $app->group(['prefix' => 'api/v1'], function($app) {
     $app->post('address', 'AddressController@createAddress');
 
     $app->get('ind_full/{id}', 'IndividualController@getIndividualFull');
+    
+    $app->get('wife/{id}', 'CoupleController@getWife');
 });
