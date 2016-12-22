@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Individual;
+use App\Address;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
@@ -16,7 +17,7 @@ class IndividualController extends Controller{
     }
     
     
-    public function getIndividual(Request $request, $id){
+    public function getIndividual($id){
         
         $individual = Individual::find($id);
 
@@ -53,5 +54,15 @@ class IndividualController extends Controller{
 
         return response()->json('Removido com sucesso.');
     }
+ 
+    public function getIndividualFull ($id){
+        
+        $individual = Individual::find($id);
+        
+        $address = Address::find($individual->address_id);
+        
+        return response()->json(array($individual, $address));
+    }
+    
     
 }

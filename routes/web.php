@@ -15,10 +15,6 @@ $app->get('/', function () use ($app) {
     return $app->version();
 });
 
-$app->get('foo', function () {
-    return 'Hello World';
-});
-
 
 $app->group(['prefix' => 'api/v1'], function($app) {
 
@@ -36,5 +32,5 @@ $app->group(['prefix' => 'api/v1'], function($app) {
     $app->get('address', 'AddressController@index');
     $app->post('address', 'AddressController@createAddress');
 
-    
+    $app->get('ind_full/{id}', 'IndividualController@getIndividualFull');
 });

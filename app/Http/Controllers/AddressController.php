@@ -16,7 +16,7 @@ class AddressController extends Controller{
     }
     
     
-    public function getAddress(Request $request, $id){
+    public function getAddress($id){
         
         $address = Address::find($id);
 

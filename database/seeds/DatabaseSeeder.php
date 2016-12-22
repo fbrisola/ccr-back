@@ -25,6 +25,11 @@ class DatabaseSeeder extends Seeder {
         $this->call('RolesTableSeeder');
 //this message shown in your terminal after running db:seed command
         $this->command->info("Roles table seeded :)");
+
+//call couples table seeder class
+        $this->call('CouplesTableSeeder');
+//this message shown in your terminal after running db:seed command
+        $this->command->info("Couples table seeded :)");
     }
 
 }
@@ -71,7 +76,6 @@ class AddressesTableSeeder extends Seeder {
 
 }
 
-
 class RolesTableSeeder extends Seeder {
 
     public function run() {
@@ -87,6 +91,23 @@ class RolesTableSeeder extends Seeder {
             array('created_at' => date('Y-m-d h:m:s', time()), 'updated_at' => date('Y-m-d h:m:s', time()), 'description' => 'Filho'),
             array('created_at' => date('Y-m-d h:m:s', time()), 'updated_at' => date('Y-m-d h:m:s', time()), 'description' => 'Filha'),
         ));
+    }
+
+}
+
+class CouplesTableSeeder extends Seeder {
+
+    public function run() {
+
+//truncate couples table records
+        DB::table('couples')->truncate();
+
+        DB::table('couples')->insert([
+            'created_at' => date('Y-m-d h:m:s', time()),
+            'updated_at' => date('Y-m-d h:m:s', time()),
+            'husband_id' => '1',
+            'wife_id' => '2',
+        ]);
     }
 
 }
