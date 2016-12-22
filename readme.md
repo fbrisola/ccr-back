@@ -1,6 +1,5 @@
-# ccr-members
-
 ## This is a simple webapp for registering church members data. AngularJS (frontend) and PHP APIs, using Lumen + MySQL (backend)
+
 
 # Lumen PHP Framework
 
