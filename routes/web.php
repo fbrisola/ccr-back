@@ -25,7 +25,8 @@ $app->group(['prefix' => 'api/v1'], function($app) {
     $app->put('individual/{id}', 'IndividualController@updateIndividual');
     $app->delete('individual/{id}', 'IndividualController@deleteIndividual');
 
-
+    $app->get('indadd', 'IndaddController@index');
+    $app->get('indadd/{id}', 'IndaddController@getIndadd');
 
     //test APIs
 
@@ -33,6 +34,6 @@ $app->group(['prefix' => 'api/v1'], function($app) {
     $app->post('address', 'AddressController@createAddress');
 
     $app->get('ind_full/{id}', 'IndividualController@getIndividualFull');
-    
+
     $app->get('wife/{id}', 'CoupleController@getWife');
 });
