@@ -17,9 +17,9 @@ class CreateRelationshipsTable extends Migration {
             $table->timestamps();
 
             //my fields
-            $table->integer('individual_id_1')->unsigned();
+            $table->integer('person_id_1')->unsigned();
             $table->integer('role_id_1')->unsigned();
-            $table->integer('individual_id_2')->unsigned();
+            $table->integer('person_id_2')->unsigned();
             $table->integer('role_id_2')->unsigned();
         });
     }

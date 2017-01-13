@@ -19,21 +19,21 @@ $app->get('/', function () use ($app) {
 $app->group(['prefix' => 'api/v1'], function($app) {
 
     // external APIs
-    $app->get('individual/{id}', 'IndividualController@getIndividual');
-    $app->get('individual', 'IndividualController@index');
-    $app->post('individual', 'IndividualController@createIndividual');
-    $app->put('individual/{id}', 'IndividualController@updateIndividual');
-    $app->delete('individual/{id}', 'IndividualController@deleteIndividual');
+    $app->get('people/{id}', 'PersonController@getPerson');
+    $app->get('people', 'PersonController@index');
+    $app->post('people', 'PersonController@createPerson');
+    $app->put('people/{id}', 'PersonController@updatePerson');
+    $app->delete('people/{id}', 'PersonController@deletePerson');
 
     $app->get('indadd', 'IndaddController@index');
     $app->get('indadd/{id}', 'IndaddController@getIndadd');
 
     //test APIs
 
-    $app->get('address', 'AddressController@index');
-    $app->post('address', 'AddressController@createAddress');
+    $app->get('addresses', 'AddressController@index');
+    $app->post('addresses', 'AddressController@createAddress');
 
-    $app->get('ind_full/{id}', 'IndividualController@getIndividualFull');
+    $app->get('ind_full/{id}', 'PersonController@getPersonFull');
 
-    $app->get('wife/{id}', 'CoupleController@getWife');
+    $app->get('wifes/{id}', 'CoupleController@getWife');
 });

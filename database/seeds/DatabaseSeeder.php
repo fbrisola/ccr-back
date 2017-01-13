@@ -11,10 +11,10 @@ class DatabaseSeeder extends Seeder {
      */
     public function run() {
 
-//call individuals table seeder class
-        $this->call('IndividualsTableSeeder');
+//call people table seeder class
+        $this->call('PeopleTableSeeder');
 //this message shown in your terminal after running db:seed command
-        $this->command->info("Individuals table seeded :)");
+        $this->command->info("People table seeded :)");
 
 //call addresses table seeder class
         $this->call('AddressesTableSeeder');
@@ -34,14 +34,14 @@ class DatabaseSeeder extends Seeder {
 
 }
 
-class IndividualsTableSeeder extends Seeder {
+class PeopleTableSeeder extends Seeder {
 
     public function run() {
 
-//truncate individuals table records
-        DB::table('individuals')->truncate();
+//truncate people table records
+        DB::table('people')->truncate();
 
-        DB::table('individuals')->insert(array(
+        DB::table('people')->insert(array(
             array('created_at' => date('Y-m-d h:m:s', time()), 'updated_at' => date('Y-m-d h:m:s', time()), 'name' => 'Fernando', 'lastname' => 'Brisola Batista', 'genre' => 'Masculino', 'birthdate' => '1969-12-03', 'email' => str_random(10) . '@gmail.com', 'married' => 'True', 'address_id' => '1'),
             array('created_at' => date('Y-m-d h:m:s', time()), 'updated_at' => date('Y-m-d h:m:s', time()), 'name' => 'Celia', 'lastname' => 'M Marques B Batista', 'genre' => 'Feminino', 'birthdate' => '1971-07-08', 'email' => str_random(10) . '@gmail.com', 'married' => 'True', 'address_id' => '1'),
             array('created_at' => date('Y-m-d h:m:s', time()), 'updated_at' => date('Y-m-d h:m:s', time()), 'name' => 'Raphael', 'lastname' => 'M Marques Brisola Batista', 'genre' => 'Masculino', 'birthdate' => '2005-04-07', 'email' => str_random(10) . '@gmail.com', 'married' => 'False', 'address_id' => '1'),

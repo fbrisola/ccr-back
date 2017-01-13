@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateIndividualsTable extends Migration {
+class CreatePeopleTable extends Migration {
 
     /**
      * Run the migrations.
@@ -12,7 +12,7 @@ class CreateIndividualsTable extends Migration {
      * @return void
      */
     public function up() {
-        Schema::create('individuals', function (Blueprint $table) {
+        Schema::create('people', function (Blueprint $table) {
             $table->increments('id');
             $table->timestamps();
 
@@ -34,7 +34,7 @@ class CreateIndividualsTable extends Migration {
      * @return void
      */
     public function down() {
-        Schema::dropIfExists('individuals');
+        Schema::dropIfExists('people');
     }
 
 }

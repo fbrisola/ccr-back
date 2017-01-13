@@ -31,7 +31,7 @@ class CreateIndaddsView extends Migration {
                 a.zipcode,
                 a.phone
             FROM
-                individuals AS i
+                people AS i
             INNER JOIN
                 addresses AS a
             ON
