@@ -19,7 +19,7 @@ class AddressController extends Controller{
     public function getAddress($id){
         
         $address = Address::find($id);
-
+        
         return response()->json($address);
     }
     
@@ -40,16 +40,16 @@ class AddressController extends Controller{
         if($request->input('zipcode') <> NULL) $address->cel = $request->input('zipcode');
         if($request->input('phone') <> NULL) $address->email = $request->input('phone');
         $address->save();
-
+        
         return response()->json($address);
-
-        }
+        
+    }
     
     public function deleteAddress($id){
         
         $address = Address::find($id);
         $address->delete();
-
+        
         return response()->json('Removido com sucesso.');
         
     }
