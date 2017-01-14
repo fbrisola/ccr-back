@@ -15,4 +15,7 @@ class Person extends Model
         'name', 'lastname', 'genre' , 'birthdate', 'cel',  'email',
     ];
 
+public function address() {
+    return $this->belongsTo('App\Address');
+}
 }

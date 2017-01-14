@@ -4,18 +4,18 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateAddressesTable extends Migration
-{
+class CreateAddressesTable extends Migration {
     /**
-     * Run the migrations.
-     *
-     * @return void
-     */
-    public function up()
-    {
+    * Run the migrations.
+    *
+    * @return void
+    */
+    public function up() {
         Schema::create('addresses', function (Blueprint $table) {
             $table->increments('id');
             $table->timestamps();
+            
+            // my fields
             $table->string('street');
             $table->string('district');
             $table->string('city');
@@ -24,12 +24,12 @@ class CreateAddressesTable extends Migration
             $table->string('phone', 20);
         });
     }
-
+    
     /**
-     * Reverse the migrations.
-     *
-     * @return void
-     */
+    * Reverse the migrations.
+    *
+    * @return void
+    */
     public function down()
     {
         Schema::dropIfExists('addresses');

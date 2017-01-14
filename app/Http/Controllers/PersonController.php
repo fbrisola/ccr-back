@@ -7,30 +7,42 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
 class PersonController extends Controller {
-
+    
     public function index() {
-
+        
         $person = Person::all();
 
+        foreach($person as $p) {
+            $p['address'] = $p->address;
+        }
+        
         return response()->json($person);
     }
-
+    
     public function getPerson($id) {
-
+        
         $person = Person::find($id);
-
+        $person['address'] = $person->address;
+        
         return response()->json($person);
     }
-
+    
+    public function getPersonAddress($id) {
+        
+        $address = Person::find($id)->address;
+        
+        return response()->json($address);
+    }
+    
     public function createPerson(Request $request) {
-
+        
         $person = Person::create($request->all());
-
+        
         return response()->json($person);
     }
-
+    
     public function updatePerson(Request $request, $id) {
-
+        
         $person = Person::find($id);
         if ($request->input('name') <> NULL)
             $person->name = $request->input('name');
@@ -49,16 +61,30 @@ class PersonController extends Controller {
         if ($request->input('address_id') <> NULL)
             $person->address_id = $request->input('address_id');
         $person->save();
-
+        
         return response()->json($person);
     }
-
+    
     public function deletePerson($id) {
-
+        
         $person = Person::find($id);
         $person->delete();
-
+        
         return response()->json('Removido com sucesso.');
     }
-
+    
+    public function teste() {
+        
+        $obj1 =
+        [
+            'nome' => 'Fernando',
+            'endereco'=>
+            [
+                'rua'=>'humberto de campos', 'bairro'=>'vila guarani'
+            ]
+        ];
+        
+        return response()->json($obj1['endereco']);
+        
+    }
 }
