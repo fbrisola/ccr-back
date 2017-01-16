@@ -23,6 +23,12 @@ class AddressController extends Controller{
         return response()->json($address);
     }
     
+    public function getAddressPerson($id) {
+        $person =Address::find($id)->person;
+
+        return response()->json($person);
+    }
+    
     public function createAddress(Request $request){
         
         $address = Address::create($request->all());
