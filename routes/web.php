@@ -35,5 +35,5 @@ $app->group(['prefix' => 'api/v1'], function($app) {
     
     //test APIs
     
-    $app->get('wifes/{id}', 'CoupleController@getWife');
+    $app->get('people/{id}/wife', 'CoupleController@getWife');
 });
