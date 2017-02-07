@@ -11,18 +11,18 @@ class PersonController extends Controller {
     public function index() {
         
         $person = Person::all();
-
+/*
         foreach($person as $p) {
             $p['address'] = $p->address;
         }
-        
+  */      
         return response()->json($person);
     }
     
     public function getPerson($id) {
         
         $person = Person::find($id);
-        $person['address'] = $person->address;
+ //       $person['address'] = $person->address;
         
         return response()->json($person);
     }
