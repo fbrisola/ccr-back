@@ -73,18 +73,4 @@ class PersonController extends Controller {
         return response()->json('Removido com sucesso.');
     }
     
-    public function teste() {
-        
-        $obj1 =
-        [
-            'nome' => 'Fernando',
-            'endereco'=>
-            [
-                'rua'=>'humberto de campos', 'bairro'=>'vila guarani'
-            ]
-        ];
-        
-        return response()->json($obj1['endereco']);
-        
-    }
 }
